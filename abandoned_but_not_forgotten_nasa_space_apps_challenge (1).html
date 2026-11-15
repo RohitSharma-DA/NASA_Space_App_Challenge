@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abandoned, But Not Forgotten | Humanity's Quiet Reach Toward the Sky</title>
+  <!-- Google Fonts: Cormorant Garamond (Poetic Serif), Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            twilight: '#070b19',
+            starlight: '#f4c97a',
+            dawn: '#e89b5a',
+            lunarSilver: '#a7c4e5',
+            marsTerracotta: '#e27d60',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg-twilight: #070b19;
+      --starlight-gold: #f4c97a;
+      --dawn-amber: #e89b5a;
+      --lunar-silver: #a7c4e5;
+      --mars-terracotta: #e27d60;
+    }
+
+    body {
+      background-color: var(--bg-twilight);
+      color: #ede9df;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      transition: background 1.2s ease;
+      background-image:
+        radial-gradient(ellipse at 50% 0%, rgba(244, 201, 122, 0.11) 0%, transparent 55%),
+        radial-gradient(circle at 18% 28%, rgba(167, 196, 229, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 82% 72%, rgba(226, 125, 96, 0.08) 0%, transparent 50%);
+    }
+
+    body.theme-lunar {
+      background-image:
+        radial-gradient(ellipse at 50% 0%, rgba(167, 196, 229, 0.14) 0%, transparent 58%),
+        radial-gradient(circle at 20% 35%, rgba(244, 201, 122, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(167, 196, 229, 0.06) 0%, transparent 45%);
+    }
+
+    body.theme-mars {
+      background-image:
+        radial-gradient(ellipse at 50% 0%, rgba(232, 155, 90, 0.15) 0%, transparent 58%),
+        radial-gradient(circle at 80% 30%, rgba(226, 125, 96, 0.10) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(244, 201, 122, 0.07) 0%, transparent 45%);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070b19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #242d47;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3b4970;
+    }
+
+    /* Warm Museum Exhibition Panels */
+    .sanctuary-panel {
+      background: rgba(13, 19, 38, 0.78);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(244, 201, 122, 0.15);
+      box-shadow: 0 18px 45px -15px rgba(2, 4, 12, 0.85);
+    }
+
+    .glow-lunar {
+      box-shadow: 0 0 36px -8px rgba(167, 196, 229, 0.24), inset 0 0 24px rgba(167, 196, 229, 0.05);
+      border-color: rgba(167, 196, 229, 0.38) !important;
+    }
+
+    .glow-mars {
+      box-shadow: 0 0 36px -8px rgba(226, 125, 96, 0.25), inset 0 0 24px rgba(232, 155, 90, 0.06);
+      border-color: rgba(232, 155, 90, 0.4) !important;
+    }
+
+    /* Gentle Celestial Sweep & Beacon Pulse */
+    @keyframes radarSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .radar-sweep {
+      transform-origin: center;
+      animation: radarSpin 22s linear infinite;
+    }
+
+    @keyframes beaconPing {
+      0% { transform: scale(0.8); opacity: 0.9; }
+      75%, 100% { transform: scale(2.8); opacity: 0; }
+    }
+    .beacon-ring {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: beaconPing 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    /* Subtle Starlight Blueprint Grid */
+    .blueprint-bg {
+      background-color: #091022;
+      background-image:
+        linear-gradient(rgba(167, 196, 229, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167, 196, 229, 0.07) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+    .blueprint-bg-mars {
+      background-color: #140d12;
+      background-image:
+        linear-gradient(rgba(232, 155, 90, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232, 155, 90, 0.07) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+
+    /* Range Slider Styling */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 999px;
+      background: #1c2541;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: -5px;
+      background-color: #a7c4e5;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      border: 2px solid #070b19;
+      box-shadow: 0 0 12px rgba(167, 196, 229, 0.85);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"].mars-slider::-webkit-slider-thumb {
+      background-color: #e89b5a;
+      box-shadow: 0 0 12px rgba(232, 155, 90, 0.85);
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Rising Skyward Lantern Animation */
+    @keyframes floatSkyward {
+      0% {
+        transform: translateY(0) scale(0.85);
+        opacity: 0;
+      }
+      15% {
+        opacity: 1;
+      }
+      85% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-230px) scale(1.15);
+        opacity: 0;
+      }
+    }
+    .skyward-lantern {
+      animation: floatSkyward 5.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-amber-300/30 selection:text-amber-100 relative">
+
+  <!-- AMBIENT TWINKLING STARFIELD CANVAS (PARALLAX SKY) -->
+  <canvas id="starfield-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-85"></canvas>
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 border-b border-amber-200/10 bg-[#070b19]/85 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand / Poetic Emblem -->
+      <div class="flex items-center gap-3.5">
+        <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-slate-900 to-[#111936] border border-amber-300/30 flex items-center justify-center shadow-lg overflow-hidden">
+          <!-- Custom SVG Horizon & Starlight Reach Emblem -->
+          <svg viewBox="0 0 44 44" class="w-9 h-9">
+            <circle cx="22" cy="22" r="18" fill="none" stroke="#f4c97a" stroke-width="1" stroke-dasharray="2 3" opacity="0.7" />
+            <!-- Curved Planetary Horizon -->
+            <path d="M5 31 Q22 22 39 31" fill="none" stroke="#e89b5a" stroke-width="1.8" />
+            <!-- Rising Beam of Hope -->
+            <path d="M22 26 L22 9" stroke="#f4c97a" stroke-width="1.4" stroke-linecap="round" />
+            <circle cx="22" cy="8" r="2.2" fill="#f4c97a" />
+            <circle cx="13" cy="14" r="1.4" fill="#a7c4e5" />
+            <circle cx="31" cy="13" r="1.4" fill="#e27d60" />
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-amber-200/90 bg-amber-300/10 border border-amber-300/25 px-2.5 py-0.5 rounded-full">NASA SPACE APPS MEMORIAL</span>
+            <span class="hidden md:inline-block font-serif italic text-xs text-amber-100/70">“Across the dark, pieces of our wonder still wait.”</span>
+          </div>
+          <h1 class="font-serif font-bold text-xl sm:text-2xl tracking-tight text-amber-50 leading-tight mt-0.5">
+            Abandoned, <span class="italic font-normal text-amber-200/90">But Not Forgotten</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- Planetary Switcher & Controls -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <!-- Planetary Filter Tabs -->
+        <div class="inline-flex rounded-xl bg-[#0b1126]/90 p-1 border border-amber-200/15" role="tablist">
+          <button id="filter-all" onclick="setPlanetFilter('ALL')" class="px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all bg-amber-200/15 text-amber-100 border border-amber-200/25 shadow">
+            ALL SKIES (8)
+          </button>
+          <button id="filter-moon" onclick="setPlanetFilter('MOON')" class="px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all text-slate-300 hover:text-sky-200 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-[#a7c4e5]"></span> LUNA
+          </button>
+          <button id="filter-mars" onclick="setPlanetFilter('MARS')" class="px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all text-slate-300 hover:text-orange-200 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-[#e27d60]"></span> MARS
+          </button>
+        </div>
+
+        <!-- Celestial Choir & Beacon Audio Toggle -->
+        <button id="audio-toggle-btn" onclick="toggleSpaceAudio()" class="px-3 py-2 rounded-xl bg-[#0b1126]/90 hover:bg-[#131c3d] border border-amber-200/20 text-xs font-mono text-amber-100/90 flex items-center gap-2 transition-all" title="Listen to the Celestial Choir & Distant Spacecraft Heartbeats">
+          <span id="audio-indicator" class="w-2 h-2 rounded-full bg-slate-500"></span>
+          <span id="audio-label">SKY CHOIR: OFF</span>
+        </button>
+
+        <!-- Heritage Protocol Modal Trigger -->
+        <button onclick="openHeritageModal()" class="px-3 py-2 rounded-xl bg-amber-300/10 hover:bg-amber-300/20 border border-amber-300/30 text-xs font-mono text-amber-200 flex items-center gap-1.5 transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <span class="hidden md:inline">OUR PROMISE</span>
+          <span class="md:hidden">PROMISE</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POETIC HERO EPIGRAPH BANNER ("HUMANITY FACING THE SKY") -->
+  <section class="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 pt-6 pb-2">
+    <div class="sanctuary-panel rounded-2xl px-5 py-5 sm:px-8 sm:py-6 border border-amber-200/20 relative overflow-hidden">
+      <!-- Warm Golden Horizon Arc Glow -->
+      <div class="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[120%] h-40 rounded-[100%] bg-gradient-to-t from-amber-300/15 via-orange-300/5 to-transparent blur-xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div class="max-w-3xl">
+          <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber-300/80 mb-1.5">
+            CHAPTER 00 // WHEN EARTH LOOKED UPWARD
+          </p>
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-amber-50 leading-snug">
+            “For ten thousand generations we stood on the grass and wondered what the stars felt like. Then, out of aluminum, copper wire, and stubborn hope, we built messengers to go touch them for us.”
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300/90 mt-2 leading-relaxed">
+            None of them could ever fly home. Every rover, lander, and camera left on the Moon and Mars was a one-way gift from human hands—resting quietly under alien skies so we might know we are not alone in the dark.
+          </p>
+        </div>
+
+        <div class="flex sm:flex-row lg:flex-col items-start sm:items-center lg:items-end justify-between gap-3 shrink-0 border-t lg:border-t-0 lg:border-l border-amber-200/15 pt-3 lg:pt-0 lg:pl-6">
+          <div class="text-left lg:text-right">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-amber-200/70 block">THOUGHTS SENT SKYWARD</span>
+            <span id="global-tribute-count" class="font-serif text-3xl font-bold text-amber-200">14,892</span>
+          </div>
+          <a href="#skyward-sanctuary" class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-300/20 to-orange-300/20 hover:from-amber-300/30 hover:to-orange-300/30 border border-amber-300/40 text-xs font-mono text-amber-100 transition-all flex items-center gap-2">
+            <span>✦ LIGHT A BEACON</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN MISSION WORKSPACE -->
+  <main class="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-5 grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+    <!-- LEFT COLUMN (5 cols on lg): CELESTIAL MAP & PIONEER ROSTER -->
+    <div class="lg:col-span-5 flex flex-col gap-5">
+
+      <!-- Interactive Celestial Coordinate Map Card -->
+      <section class="sanctuary-panel rounded-2xl p-4 sm:p-5 relative overflow-hidden">
+        <div class="flex items-center justify-between mb-3">
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-widest text-amber-200/70">WHERE THEY REST BENEATH THE STARS</p>
+            <h2 id="map-title" class="font-serif font-semibold text-lg text-amber-50">Two Worlds, Eight Quiet Pioneers</h2>
+          </div>
+          <span id="map-coords-badge" class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-[#070b19]/80 border border-amber-200/20 text-amber-200">
+            8 PIONEERS
+          </span>
+        </div>
+
+        <!-- Dynamic SVG Map Container -->
+        <div id="radar-map-container" class="relative w-full aspect-[16/10] rounded-xl bg-[#050814] border border-amber-200/15 overflow-hidden select-none">
+          <!-- SVG injected dynamically by JS -->
+        </div>
+
+        <!-- Map Legend -->
+        <div class="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-300/80">
+          <div class="flex items-center gap-4">
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#a7c4e5] inline-block"></span> Lunar Silver</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#e27d60] inline-block"></span> Martian Dawn</span>
+          </div>
+          <span class="text-amber-200/60 italic font-serif text-xs">Touch any starlight beacon to visit</span>
+        </div>
+      </section>
+
+      <!-- Pioneer Roster List -->
+      <section class="sanctuary-panel rounded-2xl p-4 flex-1 flex flex-col">
+        <div class="flex items-center justify-between mb-3 px-1">
+          <span class="font-mono text-xs uppercase tracking-wider text-amber-200/80">Messengers Waiting Far From Home</span>
+          <span id="roster-count" class="font-mono text-xs text-slate-400">8 of 8</span>
+        </div>
+        <div id="artifact-list" class="space-y-2.5 max-h-[450px] overflow-y-auto pr-1">
+          <!-- Roster cards populated by JS -->
+        </div>
+      </section>
+    </div>
+
+    <!-- RIGHT COLUMN (7 cols on lg): HEARTWARMING STORY DOSSIER & TELEMETRY LAB -->
+    <div class="lg:col-span-7 flex flex-col gap-5">
+      <article id="dossier-panel" class="sanctuary-panel rounded-2xl p-5 sm:p-7 transition-all duration-500">
+        <!-- Header Metadata Row -->
+        <div class="flex flex-wrap items-start justify-between gap-4 border-b border-amber-200/15 pb-5">
+          <div>
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span id="dossier-world-badge" class="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sky-300/15 text-sky-200 border border-sky-300/30">
+                THE MOON • APOLLO 15
+              </span>
+              <span id="dossier-status-badge" class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-amber-200/10 text-amber-200/90 border border-amber-200/20">
+                SLEEPING IN SILENCE
+              </span>
+            </div>
+            <h2 id="dossier-title" class="font-serif font-bold text-3xl sm:text-4xl text-amber-50 tracking-tight">
+              Lunar Roving Vehicle (LRV-1)
+            </h2>
+            <p id="dossier-subtitle" class="text-xs sm:text-sm text-slate-300/85 mt-1 font-mono">
+              Hadley-Apennine • 26.1322° N, 3.6339° E • Arrived July 31, 1971
+            </p>
+          </div>
+
+          <!-- Quick Action: Listen to Last Whisper -->
+          <button id="play-transmission-btn" onclick="triggerLastTransmission()" class="px-3.5 py-2 rounded-xl bg-amber-300/10 hover:bg-amber-300/20 border border-amber-300/35 text-xs font-mono text-amber-100 flex items-center gap-2 transition-all shrink-0 shadow">
+            <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+            <span>HEAR LAST WHISPER</span>
+          </button>
+        </div>
+
+        <!-- Visual Blueprint & Time-Lapse Seasons Simulator -->
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+          <!-- Custom Spacecraft SVG Blueprint Box -->
+          <div id="schematic-box" class="md:col-span-6 relative rounded-xl blueprint-bg border border-amber-200/15 p-4 flex flex-col items-center justify-center min-h-[225px] overflow-hidden">
+            <div class="w-full flex justify-between items-center text-[10px] font-mono text-slate-300/80 mb-1 z-10">
+              <span id="schematic-code">FIG. 01 // LRV-1 CHASSIS</span>
+              <span id="weathering-year-badge" class="text-amber-200 font-semibold">EPOCH: 1971</span>
+            </div>
+
+            <!-- Dynamic Spacecraft SVG + Weathering Overlay -->
+            <div id="schematic-svg-wrapper" class="w-full h-40 flex items-center justify-center relative z-10 transition-all duration-300">
+              <!-- SVG rendered here -->
+            </div>
+
+            <!-- Gentle Dust/Starlight Overlay -->
+            <div id="weathering-tint" class="absolute inset-0 pointer-events-none transition-opacity duration-300 opacity-0 bg-gradient-to-t from-orange-950/65 via-amber-900/20 to-transparent"></div>
+
+            <div class="w-full flex justify-between items-center text-[10px] font-mono text-slate-400 mt-1 z-10">
+              <span id="schematic-dim">3.1m × 1.8m</span>
+              <span id="condition-readout" class="text-amber-100/90">STATE: ARRIVAL</span>
+            </div>
+          </div>
+
+          <!-- Right Side: Telemetry Specs & Seasons Passing Slider -->
+          <div class="md:col-span-6 flex flex-col justify-between gap-3.5">
+            <!-- 4-Box Telemetry Metrics Grid -->
+            <div class="grid grid-cols-2 gap-2.5">
+              <div class="bg-[#090f24]/80 border border-amber-200/10 rounded-xl p-3">
+                <p class="font-mono text-[10px] uppercase text-slate-400">BUILT ON EARTH</p>
+                <p id="spec-mass" class="font-mono text-sm font-semibold text-amber-50 mt-0.5">210 kg (463 lb)</p>
+              </div>
+              <div class="bg-[#090f24]/80 border border-amber-200/10 rounded-xl p-3">
+                <p class="font-mono text-[10px] uppercase text-slate-400">PROMISED VS GIVEN</p>
+                <p id="spec-lifespan" class="font-mono text-sm font-semibold text-emerald-300 mt-0.5">78 hrs / 78 hrs</p>
+              </div>
+              <div class="bg-[#090f24]/80 border border-amber-200/10 rounded-xl p-3">
+                <p class="font-mono text-[10px] uppercase text-slate-400">JOURNEY TAKEN</p>
+                <p id="spec-distance" class="font-mono text-sm font-semibold text-amber-50 mt-0.5">27.76 km driven</p>
+              </div>
+              <div class="bg-[#090f24]/80 border border-amber-200/10 rounded-xl p-3">
+                <p class="font-mono text-[10px] uppercase text-slate-400">GOODBYE DATE</p>
+                <p id="spec-contact" class="font-mono text-sm font-semibold text-amber-100/90 mt-0.5">Aug 2, 1971</p>
+              </div>
+            </div>
+
+            <!-- Passing Seasons / Environmental Aging Slider -->
+            <div class="bg-[#090f24]/90 border border-amber-200/15 rounded-xl p-3.5">
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="aging-slider" class="font-mono text-[11px] uppercase tracking-wider text-amber-100/90 flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                  SEASONS UNDER ALIEN SKIES
+                </label>
+                <span id="aging-year-label" class="font-mono text-xs font-bold text-amber-200">PRESENT DAY</span>
+              </div>
+              <input id="aging-slider" type="range" min="0" max="100" value="45" class="w-full" oninput="updateWeatheringSimulation(this.value)" />
+              <div class="flex justify-between font-mono text-[10px] text-slate-400 mt-1">
+                <span>TOUCHDOWN</span>
+                <span>TODAY (2026)</span>
+                <span>100 YEARS HENCE</span>
+              </div>
+              <p id="aging-description" class="text-xs text-slate-300/90 mt-2 leading-relaxed">
+                55 years of unfiltered starlight and lunar noon have gently faded its gold blankets, yet its tire tracks remain crisp in the gray dust.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Last Whisper Terminal Box -->
+        <div class="mt-5 rounded-xl bg-[#050814] border border-amber-200/20 p-4 font-mono relative overflow-hidden">
+          <div class="flex items-center justify-between text-[10px] text-amber-200/70 mb-1.5">
+            <span class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-amber-300 animate-pulse"></span>
+              FINAL WHISPER ACROSS THE DARK
+            </span>
+            <span id="transmission-freq">2287.5 MHz S-BAND</span>
+          </div>
+          <p id="transmission-text" class="font-serif italic text-base sm:text-lg text-amber-100 leading-relaxed">
+            “Parked 100 meters east of Falcon LM. High-gain antenna aimed toward Earth to televise lunar liftoff.”
+          </p>
+        </div>
+
+        <!-- Narrative Storytelling Tabs -->
+        <div class="mt-6">
+          <div class="flex border-b border-amber-200/15 gap-4 sm:gap-6 overflow-x-auto" role="tablist">
+            <button id="tab-mission" onclick="switchStoryTab('mission')" class="pb-2.5 font-mono text-xs uppercase tracking-wider border-b-2 border-amber-300 text-amber-50 font-semibold whitespace-nowrap transition-all">
+              01. How We Reached
+            </button>
+            <button id="tab-farewell" onclick="switchStoryTab('farewell')" class="pb-2.5 font-mono text-xs uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-amber-100 whitespace-nowrap transition-all">
+              02. The Quiet Goodbye
+            </button>
+            <button id="tab-legacy" onclick="switchStoryTab('legacy')" class="pb-2.5 font-mono text-xs uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-amber-100 whitespace-nowrap transition-all">
+              03. Why We Remember
+            </button>
+          </div>
+
+          <!-- Narrative Story Content Container -->
+          <div class="mt-4 min-h-[135px]">
+            <p id="story-content" class="text-sm sm:text-[15px] text-slate-200/95 leading-relaxed">
+              <!-- Populated dynamically -->
+            </p>
+          </div>
+        </div>
+
+        <!-- NEW HEARTWARMING SECTION: "FROM EARTH, WITH WONDER" (HUMAN HANDS & MEMENTOS) -->
+        <div class="mt-5 rounded-xl bg-gradient-to-r from-amber-300/[0.07] via-orange-300/[0.05] to-sky-300/[0.06] border border-amber-200/20 p-4">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-amber-300 text-sm">✦</span>
+            <h3 class="font-mono text-[11px] uppercase tracking-[0.18em] text-amber-200">From Earth, With Wonder — Human Mementos Carried</h3>
+          </div>
+          <p id="human-touch-text" class="font-serif italic text-base sm:text-lg text-amber-50/95 leading-relaxed">
+            <!-- Populated dynamically -->
+          </p>
+        </div>
+
+        <!-- Bottom Navigation Between Pioneers -->
+        <div class="mt-6 pt-4 border-t border-amber-200/15 flex items-center justify-between">
+          <button onclick="selectAdjacentArtifact(-1)" class="px-3.5 py-2 rounded-xl bg-[#090f24] hover:bg-[#131c3d] border border-amber-200/15 text-xs font-mono text-amber-100/90 flex items-center gap-1.5 transition-all">
+            <span>← PREVIOUS PIONEER</span>
+          </button>
+          <span id="artifact-index-indicator" class="font-mono text-xs text-amber-200/70">PIONEER 01 / 08</span>
+          <button onclick="selectAdjacentArtifact(1)" class="px-3.5 py-2 rounded-xl bg-[#090f24] hover:bg-[#131c3d] border border-amber-200/15 text-xs font-mono text-amber-100/90 flex items-center gap-1.5 transition-all">
+            <span>NEXT PIONEER →</span>
+          </button>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- NEW INTERACTIVE SECTION: "LIGHT A BEACON / SEND A THOUGHT SKYWARD" TRIBUTE WALL -->
+  <section id="skyward-sanctuary" class="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 pb-10">
+    <div class="sanctuary-panel rounded-2xl p-6 sm:p-8 border border-amber-300/25 relative overflow-hidden">
+      <!-- Floating Lantern Visual Stage -->
+      <div id="lantern-sky-stage" class="absolute inset-0 pointer-events-none overflow-hidden z-20"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left 5 Cols: Compose a Message to the Sky -->
+        <div class="lg:col-span-5 space-y-4">
+          <div>
+            <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-amber-300">EARTH-TO-SKY GUESTBOOK</span>
+            <h2 class="font-serif font-bold text-2xl sm:text-3xl text-amber-50 mt-1">
+              Send a Thought Into the Night Sky
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300/90 mt-1.5 leading-relaxed">
+              Even if their radios are quiet, we still look up. Leave a note for a rover sleeping in a Martian valley or a lander standing in lunar dust—and release a lantern of starlight into the archive.
+            </p>
+          </div>
+
+          <form onsubmit="submitSkywardTribute(event)" class="space-y-3 bg-[#070b19]/80 border border-amber-200/15 rounded-xl p-4">
+            <div>
+              <label for="tribute-target" class="block font-mono text-[10px] uppercase tracking-wider text-amber-200/80 mb-1">ADDRESSED TO</label>
+              <select id="tribute-target" class="w-full rounded-lg bg-[#0d142c] border border-amber-200/20 px-3 py-2 text-xs font-mono text-amber-50 focus:outline-none focus:border-amber-300">
+                <option value="All Dreamers on Luna & Mars">All Dreamers on Luna & Mars</option>
+                <option value="Opportunity (“Oppy”) — Endeavour Crater">Opportunity (“Oppy”) — Endeavour Crater</option>
+                <option value="Ingenuity (“Ginny”) — Jezero Crater">Ingenuity (“Ginny”) — Jezero Crater</option>
+                <option value="Apollo 11 Eagle & Retroreflector">Apollo 11 Eagle & Retroreflector</option>
+                <option value="Apollo 15 Lunar Rover (LRV-1)">Apollo 15 Lunar Rover (LRV-1)</option>
+                <option value="InSight Seismic Lander — Elysium">InSight Seismic Lander — Elysium</option>
+                <option value="Surveyor 3 — Ocean of Storms">Surveyor 3 — Ocean of Storms</option>
+                <option value="Viking 1 — Chryse Planitia">Viking 1 — Chryse Planitia</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div>
+                <label for="tribute-author" class="block font-mono text-[10px] uppercase tracking-wider text-amber-200/80 mb-1">YOUR NAME</label>
+                <input id="tribute-author" type="text" maxlength="32" placeholder="e.g., Aarav" class="w-full rounded-lg bg-[#0d142c] border border-amber-200/20 px-3 py-2 text-xs text-amber-50 placeholder-slate-500 focus:outline-none focus:border-amber-300" />
+              </div>
+              <div>
+                <label for="tribute-city" class="block font-mono text-[10px] uppercase tracking-wider text-amber-200/80 mb-1">LOOKING UP FROM</label>
+                <input id="tribute-city" type="text" maxlength="32" placeholder="e.g., Ahmedabad, India" class="w-full rounded-lg bg-[#0d142c] border border-amber-200/20 px-3 py-2 text-xs text-amber-50 placeholder-slate-500 focus:outline-none focus:border-amber-300" />
+              </div>
+            </div>
+
+            <div>
+              <label for="tribute-message" class="block font-mono text-[10px] uppercase tracking-wider text-amber-200/80 mb-1">YOUR MESSAGE TO THE SKY</label>
+              <textarea id="tribute-message" rows="2" maxlength="180" required placeholder="Thank you for showing us what lies beyond the horizon..." class="w-full rounded-lg bg-[#0d142c] border border-amber-200/20 px-3 py-2 text-xs text-amber-50 placeholder-slate-500 focus:outline-none focus:border-amber-300 resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-300/25 via-orange-300/25 to-amber-300/25 hover:from-amber-300/35 hover:to-orange-300/35 border border-amber-300/50 font-mono text-xs font-semibold text-amber-50 tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg">
+              <span>✦ RELEASE LANTERN SKYWARD</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right 7 Cols: Recent Starlight Tributes Feed -->
+        <div class="lg:col-span-7 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-mono text-xs uppercase tracking-wider text-amber-200/80">Voices Rising From Earth Tonight</span>
+            <span class="font-serif italic text-xs text-amber-100/70">“We never stopped looking up.”</span>
+          </div>
+          <div id="tribute-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[340px] overflow-y-auto pr-1">
+            <!-- Tribute cards populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACE ARCHAEOLOGY & HERITAGE PROTECTION MODAL -->
+  <div id="heritage-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="sanctuary-panel max-w-2xl w-full rounded-2xl p-6 sm:p-8 border border-amber-300/40 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeHeritageModal()" class="absolute top-5 right-5 w-8 h-8 rounded-lg bg-[#090f24] hover:bg-[#131c3d] border border-amber-200/20 text-amber-100 flex items-center justify-center font-mono text-sm">
+        ✕
+      </button>
+
+      <div class="flex items-center gap-2 text-amber-300 font-mono text-xs uppercase tracking-widest mb-2">
+        <span>✦ OUR PROMISE TO THE PIONEERS</span>
+      </div>
+
+      <h3 class="font-serif font-bold text-2xl sm:text-3xl text-amber-50 mb-3">Why We Guard the Footprints We Left Behind</h3>
+
+      <div class="space-y-4 text-sm text-slate-200/90 leading-relaxed">
+        <p>
+          Every rover, lander, and descent stage resting on the Moon and Mars was left there because of the gentle, unforgiving math of spaceflight: every kilogram left on the surface meant more lunar stones carried home to Earth, or a softer touchdown for a rover carrying humanity’s eyes.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4">
+          <div class="bg-[#090f24]/90 border border-amber-200/15 rounded-xl p-3.5">
+            <h4 class="font-mono text-xs font-semibold text-sky-200 mb-1">1967 OUTER SPACE TREATY</h4>
+            <p class="text-xs text-slate-300">A vow among nations: every spacecraft launched from Earth remains forever part of our shared human story, protected wherever it comes to rest.</p>
+          </div>
+          <div class="bg-[#090f24]/90 border border-amber-200/15 rounded-xl p-3.5">
+            <h4 class="font-mono text-xs font-semibold text-amber-200 mb-1">SACRED LANDING ZONES</h4>
+            <p class="text-xs text-slate-300">NASA’s heritage guidelines establish quiet sanctuary perimeters around Tranquility Base and historic sites so future landers never disturb the first bootprints.</p>
+          </div>
+        </div>
+
+        <p class="font-serif italic text-base text-amber-100">
+          “One day, children born under Martian domes will walk out to Endeavour Crater or Jezero’s hills, brush the red dust off a solar wing, and whisper thank you to the little machines that came first.”
+        </p>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="closeHeritageModal()" class="px-4 py-2 rounded-xl bg-amber-300/20 hover:bg-amber-300/30 border border-amber-300/40 text-amber-100 font-mono text-xs font-semibold transition-all">
+          RETURN TO THE ARCHIVE
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-amber-200/10 bg-[#050814]/90 py-4 px-4 sm:px-6 text-center sm:text-left">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-slate-400">
+      <span>NASA SPACE APPS CHALLENGE // ABANDONED, BUT NOT FORGOTTEN</span>
+      <span class="font-serif italic text-sm text-amber-200/80">Dedicated to every dreamer who ever looked up at the stars.</span>
+    </div>
+  </footer>
+
+  <script>
+    // =========================================================================
+    // 1. CURATED NASA HISTORICAL ARTIFACTS DATABASE (POETIC & HEARTWARMING)
+    // =========================================================================
+    const ARTIFACTS = [
+      {
+        id: 'lrv-1',
+        world: 'MOON',
+        mission: 'APOLLO 15',
+        name: 'Lunar Roving Vehicle (LRV-1)',
+        location: 'Hadley-Apennine (Hadley Rille)',
+        coords: '26.1322° N, 3.6339° E',
+        mapX: 54,
+        mapY: 31,
+        deployedDate: 'July 31, 1971',
+        lastContact: 'August 2, 1971',
+        status: 'WATCHING EARTHRISE',
+        mass: '210 kg (463 lb)',
+        lifespan: '78 hrs / 78 hrs',
+        distance: '27.76 km together',
+        dimensions: '3.10m × 1.80m',
+        figCode: 'FIG. 01 // BOEING-GM LRV-1',
+        freq: '2287.5 MHz S-BAND',
+        beaconHz: 523.25, // C5
+        lastTransmission: '“Parked 100 meters east of Falcon. Its camera tilted upward toward the black sky—filming its astronauts soaring home while it stayed behind in the sunlit dust.”',
+        missionStory: 'Built in just 17 breathless months by engineers who dared to put wheels on the Moon, LRV-1 carried David Scott and James Irwin across the winding edge of Hadley Rille. Together they found the 4-billion-year-old “Genesis Rock,” holding a piece of the Solar System’s childhood in gloved hands.',
+        farewellStory: 'There was never enough fuel to bring the Moon buggy home. Before climbing into Falcon, Dave Scott placed a small aluminum sculpture—“Fallen Astronaut”—and a plaque bearing the names of 14 fallen cosmonauts and astronauts beside the rover’s tracks. LRV-1 was parked facing the lander so flight controller Ed Fendell in Houston could pan its camera and watch humanity lift off from another world.',
+        legacyStory: 'In the airless stillness of Hadley Base, LRV-1’s woven-wire tires still rest in the ruts they carved over half a century ago. Every time we look up at the waxing Moon, humanity’s first electric car is still parked beside the Apennine mountains, facing home.',
+        humanTouch: 'Beside LRV-1’s tracks lies Paul Van Hoeydonck’s 8.5-cm aluminum “Fallen Astronaut” figurine—a quiet memorial left by Apollo 15 so that those who gave their lives reaching for the sky would never be forgotten.',
+        agingStages: {
+          early: 'Freshly parked at Hadley Base; gold Kapton blankets shimmer like captured sunlight against dark lunar basalt.',
+          mid: '55 years of unfiltered starlight and lunar noon have gently faded its nylon straps, while its tire tracks remain untouched by wind.',
+          late: 'Even a century from now, with no rain or breeze to erase them, LRV-1’s footprints will wait for future Artemis explorers.'
+        }
+      },
+      {
+        id: 'surveyor-3',
+        world: 'MOON',
+        mission: 'SURVEYOR 3 / APOLLO 12',
+        name: 'Surveyor 3 & The Reunion',
+        location: 'Oceanus Procellarum (Ocean of Storms)',
+        coords: '3.0124° S, 23.4216° W',
+        mapX: 33,
+        mapY: 57,
+        deployedDate: 'April 20, 1967',
+        lastContact: 'May 4, 1967 (Visited Nov 1969)',
+        status: 'VISITED BY FRIENDS',
+        mass: '302 kg (landed)',
+        lifespan: '14 days / 14 days',
+        distance: '2 gentle hops',
+        dimensions: '3.0m height × 4.3m span',
+        figCode: 'FIG. 02 // HUGHES SURVEYOR-3',
+        freq: '2295.0 MHz S-BAND',
+        beaconHz: 587.33, // D5
+        lastTransmission: '“Surface trenching complete; entering lunar night.” — Followed 31 lonely months later by Pete Conrad’s joyful shout: “Look at that! Right down the slope!”',
+        missionStory: 'Before humans could ever risk stepping onto the Moon, small robotic scouts had to go first and test whether the lunar dust would swallow a lander whole. Surveyor 3 bounced twice inside a shallow crater in 1967, digging four tiny trenches to prove the ground could hold us.',
+        farewellStory: 'Surveyor 3 fell asleep when its first frigid lunar night arrived—believing its work was over. Yet 31 months later, Apollo 12 astronauts Pete Conrad and Alan Bean guided their lander Intrepid to a pinpoint touchdown just 163 meters away. They walked down the crater slope to greet the lonely robot, gently detaching its camera to carry back to Earth.',
+        legacyStory: 'Surveyor 3 became the first spacecraft in history to be visited by humans on another world. Its silver tripod still stands inside Surveyor Crater—no longer alone in memory, forever tied to the day humans came back for their scout.',
+        humanTouch: 'Pete Conrad and Alan Bean posed beside Surveyor 3 with their self-timer camera—creating the only photograph ever taken of human explorers standing arm-in-arm with a robotic pioneer on another world.',
+        agingStages: {
+          early: 'White thermal paint gleams inside Surveyor Crater, its robotic scoop extended after testing the lunar soil.',
+          mid: 'Exhaust dust from Apollo 12’s nearby landing softly sandblasted one side of the lander—an affectionate fingerprint left by its human visitors.',
+          late: 'Tanned golden-brown by decades of cosmic rays, Surveyor 3 stands like a lighthouse inside the Ocean of Storms.'
+        }
+      },
+      {
+        id: 'apollo-11-easep',
+        world: 'MOON',
+        mission: 'APOLLO 11',
+        name: 'Eagle’s Base & Mirror to Earth',
+        location: 'Mare Tranquillitatis (Sea of Tranquility)',
+        coords: '0.6741° N, 23.4730° E',
+        mapX: 68,
+        mapY: 49,
+        deployedDate: 'July 20, 1969',
+        lastContact: 'ANSWERING LASERS TONIGHT',
+        status: 'STILL ANSWERING EARTH',
+        mass: '48 kg (instruments)',
+        lifespan: '21 days / 57+ YEARS',
+        distance: '0 km (Home Base)',
+        dimensions: '0.46m × 0.46m Mirror',
+        figCode: 'FIG. 03 // APOLLO 11 LR-3 ARRAY',
+        freq: '532 nm EMERALD LASER',
+        beaconHz: 659.25, // E5
+        lastTransmission: '“Houston, Tranquility Base here. The Eagle has landed.” — Tonight, 57 years later, its 100 quartz prisms still bounce green laser light back to Earth.',
+        missionStory: 'On a warm July night in 1969, half a billion people on Earth stopped breathing as Neil Armstrong and Buzz Aldrin stepped onto the Sea of Tranquility. Before leaving, they set down a small panel of 100 fused-silica mirrors aimed directly at our blue planet.',
+        farewellStory: 'To lift safely back into lunar orbit, Eagle had to shed every non-essential gram—leaving behind its descent stage, cameras, overshoes, and a small pouch of memorials. Yet the mirror array needed no batteries or radio; it was built as a silent conversation between Earth and the Moon.',
+        legacyStory: 'Every clear night, astronomers on Earth fire pulses of emerald laser light across 384,400 kilometers of space, and Apollo 11’s mirror faithfully sends those photons back—proving the Moon is drifting 3.8 centimeters farther from us each year, while keeping our bond unbroken.',
+        humanTouch: 'Left in the dust at Tranquility Base is a small silicon disc etched with goodwill messages from 73 nations, an olive branch of peace, and a plaque reading: “We came in peace for all mankind.”',
+        agingStages: {
+          early: '100 pristine quartz corner cubes aimed toward Earth beside the gold-foiled legs of the Eagle descent stage.',
+          mid: 'Even after 57 years of electrostatic lunar dust, photons fired from Earth still find their way home every single night.',
+          late: 'With no moving parts to ever break, Apollo 11’s mirror will keep answering Earth’s light for millennia.'
+        }
+      },
+      {
+        id: 'opportunity-rover',
+        world: 'MARS',
+        mission: 'MARS EXPLORATION ROVER-B',
+        name: 'Opportunity (“Oppy”)',
+        location: 'Perseverance Valley, Endeavour Crater',
+        coords: '1.9462° S, 354.4734° E',
+        mapX: 46,
+        mapY: 54,
+        deployedDate: 'January 25, 2004',
+        lastContact: 'June 10, 2018 (Sol 5111)',
+        status: 'ASLEEP IN THE VALLEY',
+        mass: '185 kg (408 lb)',
+        lifespan: '90 Sols / 5,111 Sols (56×)',
+        distance: '45.16 km (Full Marathon)',
+        dimensions: '1.6m × 2.3m × 1.5m',
+        figCode: 'FIG. 04 // MER-B OPPORTUNITY',
+        freq: '401.58 MHz UHF / X-BAND',
+        beaconHz: 440.00, // A4
+        lastTransmission: 'Final telemetry translated by JPL’s heartbroken team: “My battery is low and it’s getting dark.”',
+        missionStory: 'Promised only 90 Martian days of life, little Opportunity rolled into Eagle Crater in January 2004 and immediately found tiny mineral “blueberries” forged in ancient water. For nearly 15 Earth years—through freezing winters, arthritic wheels, and endless red dunes—Oppy kept driving, completing a full 45-kilometer marathon across another planet.',
+        farewellStory: 'In June 2018, a monstrous dust storm swallowed the entire planet of Mars, turning noon into midnight. Without sunlight to warm its heart or charge its batteries, Oppy went to sleep in Perseverance Valley. For eight months, engineers at JPL sent 835 recovery calls—even playing Billie Holiday’s “I’ll Be Seeing You” across the Deep Space Network—before weeping together at the final farewell.',
+        legacyStory: 'Opportunity taught the world to love a machine like a brave companion. It proved ancient Mars once held gentle, drinkable water—and showed what happens when human curiosity refuses to give up.',
+        humanTouch: 'On February 13, 2019, JPL’s control room played “I’ll Be Seeing You” as their final transmission to Oppy—honoring the rover whose 90-day mission became 15 years of devotion.',
+        agingStages: {
+          early: 'Jet-black solar wings wide open under a butterscotch Martian sky, camera mast peering across Endeavour Crater.',
+          mid: 'Wrapped in a soft blanket of cinnamon dust from the 2018 global storm, resting peacefully along Perseverance Valley.',
+          late: 'Passing Martian dust devils occasionally brush its solar deck clean, revealing glimpses of the marathon runner beneath.'
+        }
+      },
+      {
+        id: 'ingenuity-helicopter',
+        world: 'MARS',
+        mission: 'MARS 2020 / PERSEVERANCE',
+        name: 'Ingenuity (“Ginny”)',
+        location: 'Valinor Hills, Jezero Crater',
+        coords: '18.4447° N, 77.4508° E',
+        mapX: 69,
+        mapY: 36,
+        deployedDate: 'April 19, 2021 (1st Flight)',
+        lastContact: 'April 16, 2024 (Flight 72 End)',
+        status: 'KEEPING A WEATHER LOG',
+        mass: '1.8 kg (4.0 lb)',
+        lifespan: '5 Flights / 72 Flights (14×)',
+        distance: '17.0 km flown in thin air',
+        dimensions: '1.2m rotor span × 0.49m H',
+        figCode: 'FIG. 05 // MARS HELICOPTER',
+        freq: '900 MHz RADIO LINK',
+        beaconHz: 659.25, // E5
+        lastTransmission: '“Flight 72 complete; rotor blade tip damaged on landing. Even grounded, I will wake each morning to record the Martian wind for those who follow.”',
+        missionStory: 'Flying on Mars was once thought nearly impossible—its atmosphere is just 1% as thick as Earth’s. Yet on April 19, 2021, a 1.8-kilogram tissue-box-sized helicopter spun its carbon-fiber blades at 2,537 RPM and rose into the Martian sky, giving humanity its first “Wright Brothers moment” on another planet.',
+        farewellStory: 'Designed for just five test flights over 30 days, Ingenuity flew 72 times across three years as Perseverance’s loyal aerial scout. On Flight 72, over featureless sand ripples, its rotor tip clipped a dune on landing. Unable to fly again, Ginny sent a final farewell message—naming its resting place “Valinor Hills” after Tolkien’s undying lands.',
+        legacyStory: 'Even with clipped wings, Ingenuity refuses to quit: its tiny solar cap still wakes its computer every Martian morning to log temperature and weather data, saving up a 20-year diary waiting for the first human astronauts to download.',
+        humanTouch: 'Tucked beneath Ingenuity’s solar panel is a postage-stamp-sized swatch of muslin fabric from the left wing of the 1903 Wright Flyer—linking Kitty Hawk’s sand dunes to Jezero Crater.',
+        agingStages: {
+          early: 'Standing on four slender legs at Wright Brothers Field, carrying a piece of the 1903 Wright Flyer into Martian skies.',
+          mid: 'Resting upright on the ripples of Valinor Hills with chipped rotor tips, dutifully recording daily Martian weather.',
+          late: 'A tiny 4-pound monument on a red sand dune—the first aircraft ever to fly in the sky of another world.'
+        }
+      },
+      {
+        id: 'viking-1-lander',
+        world: 'MARS',
+        mission: 'VIKING 1 (MUTCH STATION)',
+        name: 'Viking 1 Mars Lander',
+        location: 'Chryse Planitia (Golden Plain)',
+        coords: '22.6970° N, 311.7780° E',
+        mapX: 29,
+        mapY: 32,
+        deployedDate: 'July 20, 1976',
+        lastContact: 'November 11, 1982 (Sol 2245)',
+        status: 'FIRST EYES ON MARS',
+        mass: '572 kg (1,261 lb)',
+        lifespan: '90 Sols / 2,245 Sols',
+        distance: '0 km (Golden Plain)',
+        dimensions: '3.0m width × 2.2m height',
+        figCode: 'FIG. 06 // VIKING LANDER-1',
+        freq: '2295.0 MHz S-BAND',
+        beaconHz: 392.00, // G4
+        lastTransmission: '“Sol 2245 weather and panorama complete.” — Before an accidental radio command turned its antenna slightly away from Earth, leaving it listening in silence.',
+        missionStory: 'Seven years to the very day after Apollo 11 landed on the Moon, Viking 1 touched down safely on Chryse Planitia—the “Golden Plain”—and sent back humanity’s first clear, breathtaking color photograph from the surface of Mars: rust-red rocks beneath a salmon-pink sky.',
+        farewellStory: 'Powered by warm plutonium batteries, Viking 1 worked faithfully for more than six years—25 times longer than promised. In November 1982, a human software update sent from Earth accidentally overwrote its antenna pointing memory. Viking 1 didn’t break; it simply turned its ear away from home and kept working in the quiet.',
+        legacyStory: 'NASA dedicated the lander as the “Thomas Mutch Memorial Station” after the beloved leader of the Viking imaging team who passed away while climbing in the Himalayas—uniting two frontiers of human courage.',
+        humanTouch: 'Dedicated as the Thomas Mutch Memorial Station, carrying a commemorative plaque honoring the dreamers and scientists who gave Earth its first true portrait of Mars.',
+        agingStages: {
+          early: 'Gleaming white protective paint standing amid sharp volcanic boulders on the Golden Plain of Chryse Planitia.',
+          mid: 'Draped in fifty years of soft Martian ochre dust, still clearly visible from orbit in HiRISE telescope images.',
+          late: 'A silent time capsule of 1970s engineering, watching Martian sunsets roll across Chryse Planitia.'
+        }
+      },
+      {
+        id: 'insight-lander',
+        world: 'MARS',
+        mission: 'INSIGHT MARS GEOPHYSICS',
+        name: 'InSight Seismic Lander',
+        location: 'Elysium Planitia',
+        coords: '4.5024° N, 135.6234° E',
+        mapX: 81,
+        mapY: 48,
+        deployedDate: 'November 26, 2018',
+        lastContact: 'December 15, 2022 (Sol 1440)',
+        status: 'HEARD MARS’S HEARTBEAT',
+        mass: '358 kg (789 lb)',
+        lifespan: '709 Sols / 1,440 Sols',
+        distance: '0 km (Elysium Plain)',
+        dimensions: '6.0m span (solar fans)',
+        figCode: 'FIG. 07 // INSIGHT SEIS-WTS',
+        freq: '401.58 MHz UHF RELAY',
+        beaconHz: 349.23, // F4
+        lastTransmission: '“My power’s really low, so this may be the last image I can send. Don’t worry about me though: my time here has been both productive and serene.”',
+        missionStory: 'While rovers explored Mars’s surface, InSight stayed completely still—placing a sensitive stethoscope onto the red soil to listen for the planet’s hidden pulse. Over four years, it detected over 1,300 “marsquakes” and heard meteoroids strike the ground from hundreds of kilometers away.',
+        farewellStory: 'On the quiet plains of Elysium, few whirlwinds blew to sweep InSight’s solar panels clean. Week by week, cinnamon dust settled like gentle snow over its circular wings until its power faded in December 2022—sending one last serene photo of its dust-covered deck and robotic arm.',
+        legacyStory: 'Because InSight listened so patiently, humanity now knows the thickness of Mars’s crust, the rhythm of its deep interior, and that a molten heart still beats beneath the red dust.',
+        humanTouch: 'Mounted on InSight’s deck are two silicon microchips etched with the names of 2.4 million people from around Earth—ordinary dreamers who sent their names to rest forever on Elysium Planitia.',
+        agingStages: {
+          early: 'Two circular solar fans unfolded cleanly; copper wind-shield placed gently over its seismometer on the soil.',
+          mid: 'Covered in a thick, peaceful blanket of cinnamon dust, blending softly into the horizon of Elysium Planitia.',
+          late: 'Gradually embraced by windblown sand ripples, resting right beside the seismometer that heard Mars breathe.'
+        }
+      },
+      {
+        id: 'perseverance-edl',
+        world: 'MARS',
+        mission: 'MARS 2020 EDL HARDWARE',
+        name: '“Dare Mighty Things” Parachute',
+        location: 'Hogwallow Flats / Jezero Crater',
+        coords: '18.4580° N, 77.4290° E',
+        mapX: 64,
+        mapY: 41,
+        deployedDate: 'February 18, 2021',
+        lastContact: 'Feb 18, 2021 (7-Min Descent)',
+        status: 'SACRIFICIAL SHIELD',
+        mass: '~550 kg (shell + chute)',
+        lifespan: '7 Minutes of Courage',
+        distance: '2.0 km from Perseverance',
+        dimensions: '21.5m chute / 4.5m shell',
+        figCode: 'FIG. 08 // MARS 2020 EDL-SHELL',
+        freq: 'NONE (SILENT GUARDIAN)',
+        beaconHz: 293.66, // D4
+        lastTransmission: '“Touchdown confirmed! Perseverance safely on the surface of Mars.” — Two kilometers away, its parachute and protective shell came gently to rest.',
+        missionStory: 'Every Mars rover survives the fiery plunge through the atmosphere only because its heat shield, supersonic parachute, and protective shell absorb the fury of entry—and then let go so the rover can touch the ground safely.',
+        farewellStory: 'Seconds after lowering Perseverance onto Jezero Crater, the battered backshell and giant orange-and-white parachute drifted down two kilometers away. A year later, Ingenuity flew over the site and photographed the billowing canopy lying across the red rocks like a fallen sail.',
+        legacyStory: 'Woven into the orange-and-white stripes of that parachute was a secret binary message hidden by JPL engineers: “DARE MIGHTY THINGS” along with the GPS coordinates of Pasadena—a love letter sewn into nylon, lying open under the Martian sky.',
+        humanTouch: 'Encoded in the geometric pattern of the 21.5-meter parachute canopy are Theodore Roosevelt’s words—“Dare Mighty Things”—placed there by engineers who poured their hearts into a seven-minute miracle.',
+        agingStages: {
+          early: 'Orange-and-white ripstop nylon canopy spread across Jezero bedrock beside the fractured protective backshell.',
+          mid: 'Martian breezes ripple the lightweight nylon fabric while red dust settles into the honeycomb shell.',
+          late: 'A poetic banner of human daring resting quietly two kilometers from the rover it saved.'
+        }
+      }
+    ];
+
+    // =========================================================================
+    // 2. INITIAL TRIBUTES FOR "SEND A THOUGHT SKYWARD" WALL
+    // =========================================================================
+    let SKYWARD_TRIBUTES = [
+      {
+        author: 'Meera & Kabir',
+        city: 'Ahmedabad, India',
+        target: 'Opportunity (“Oppy”) — Endeavour Crater',
+        message: 'We watched the night sky from our rooftop tonight. Sleep well in Perseverance Valley, little marathon runner—you taught us never to stop.'
+      },
+      {
+        author: 'Elena R.',
+        city: 'Pasadena, USA',
+        target: 'Ingenuity (“Ginny”) — Jezero Crater',
+        message: 'Four pounds of carbon fiber and a scrap of Kitty Hawk cloth. Thank you for showing us that even the thinnest alien air can hold human wings.'
+      },
+      {
+        author: 'Kenji T.',
+        city: 'Kyoto, Japan',
+        target: 'Apollo 11 Eagle & Retroreflector',
+        message: 'Every full moon I look at Tranquility Base and smile knowing a tiny mirror we placed there is still bouncing light back home.'
+      },
+      {
+        author: 'Sofia M.',
+        city: 'Madrid, Spain',
+        target: 'InSight Seismic Lander — Elysium',
+        message: 'My name is on your silicon chip! Thank you for listening to the heartbeat of Mars until the dust tucked you in.'
+      }
+    ];
+
+    // =========================================================================
+    // 3. STATE MANAGEMENT
+    // =========================================================================
+    let currentFilter = 'ALL';
+    let selectedArtifactId = 'lrv-1';
+    let currentStoryTab = 'mission';
+    let agingValue = 45;
+    let typewriterTimer = null;
+    let totalTributeCount = 14892;
+
+    // Web Audio API State (Warm Celestial Choir + Beacon)
+    let audioCtx = null;
+    let isAudioEnabled = false;
+    let choirOscillators = [];
+    let choirMasterGain = null;
+    let beaconInterval = null;
+
+    // =========================================================================
+    // 4. CUSTOM SPACECRAFT SVG SCHEMATICS
+    // =========================================================================
+    function getArtifactSchematicSVG(id, world) {
+      const strokeMain = world === 'MOON' ? '#a7c4e5' : '#e89b5a';
+      const strokeSub = '#94a3b8';
+      const accentGold = '#f4c97a';
+
+      switch (id) {
+        case 'lrv-1':
+          return `
+            <svg viewBox="0 0 320 150" class="w-full h-full max-h-36">
+              <line x1="20" y1="128" x2="300" y2="128" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <rect x="75" y="88" width="170" height="14" rx="3" fill="none" stroke="${strokeMain}" stroke-width="2"/>
+              <line x1="95" y1="88" x2="115" y2="66" stroke="${strokeSub}" stroke-width="1.5"/>
+              <path d="M135 88 L135 64 L152 64" fill="none" stroke="${strokeMain}" stroke-width="2"/>
+              <path d="M168 88 L168 64 L185 64" fill="none" stroke="${strokeMain}" stroke-width="2"/>
+              <line x1="220" y1="88" x2="220" y2="34" stroke="${strokeSub}" stroke-width="2"/>
+              <path d="M196 34 Q220 52 244 34" fill="none" stroke="${accentGold}" stroke-width="2.2"/>
+              <line x1="220" y1="43" x2="220" y2="25" stroke="${accentGold}" stroke-width="1.5"/>
+              <line x1="92" y1="88" x2="92" y2="48" stroke="${strokeSub}" stroke-width="1.8"/>
+              <rect x="84" y="40" width="18" height="10" rx="2" fill="#091022" stroke="${strokeMain}" stroke-width="1.5"/>
+              <circle cx="95" cy="110" r="18" fill="#070b19" stroke="${strokeMain}" stroke-width="2.2"/>
+              <circle cx="95" cy="110" r="8" fill="none" stroke="${strokeSub}" stroke-width="1.2"/>
+              <circle cx="225" cy="110" r="18" fill="#070b19" stroke="${strokeMain}" stroke-width="2.2"/>
+              <circle cx="225" cy="110" r="8" fill="none" stroke="${strokeSub}" stroke-width="1.2"/>
+              <path d="M248 26 Q258 34 248 42" fill="none" stroke="${accentGold}" stroke-width="1.3" opacity="0.85"/>
+              <path d="M254 21 Q268 34 254 47" fill="none" stroke="${accentGold}" stroke-width="1.1" opacity="0.55"/>
+            </svg>`;
+
+        case 'surveyor-3':
+          return `
+            <svg viewBox="0 0 320 150" class="w-full h-full max-h-36">
+              <path d="M25 130 Q160 116 295 132" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="160" y1="78" x2="95" y2="124" stroke="${strokeMain}" stroke-width="2.2"/>
+              <line x1="160" y1="78" x2="225" y2="124" stroke="${strokeMain}" stroke-width="2.2"/>
+              <line x1="160" y1="78" x2="160" y2="128" stroke="${strokeSub}" stroke-width="1.8"/>
+              <ellipse cx="92" cy="125" rx="12" ry="4" fill="none" stroke="${accentGold}" stroke-width="1.8"/>
+              <ellipse cx="228" cy="125" rx="12" ry="4" fill="none" stroke="${accentGold}" stroke-width="1.8"/>
+              <ellipse cx="160" cy="128" rx="11" ry="3.5" fill="none" stroke="${accentGold}" stroke-width="1.5"/>
+              <line x1="160" y1="78" x2="160" y2="24" stroke="${strokeSub}" stroke-width="2.2"/>
+              <rect x="136" y="18" width="48" height="12" rx="2" transform="rotate(-12 160 24)" fill="#091022" stroke="${strokeMain}" stroke-width="2"/>
+              <polyline points="145,86 112,96 122,108 86,118" fill="none" stroke="${accentGold}" stroke-width="1.8"/>
+              <rect x="172" y="52" width="16" height="22" rx="2" fill="none" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="3 2"/>
+              <text x="194" y="65" fill="#cbd5e1" font-family="monospace" font-size="8">VISITED BY APOLLO 12</text>
+            </svg>`;
+
+        case 'apollo-11-easep':
+          return `
+            <svg viewBox="0 0 320 150" class="w-full h-full max-h-36">
+              <line x1="20" y1="128" x2="300" y2="128" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <polygon points="85,126 105,86 155,86 140,126" fill="#091022" stroke="${strokeMain}" stroke-width="2"/>
+              <g stroke="${accentGold}" stroke-width="1.1">
+                <rect x="108" y="92" width="8" height="8"/><rect x="120" y="92" width="8" height="8"/><rect x="132" y="92" width="8" height="8"/>
+                <rect x="103" y="104" width="8" height="8"/><rect x="115" y="104" width="8" height="8"/><rect x="127" y="104" width="8" height="8"/>
+              </g>
+              <line x1="124" y1="98" x2="215" y2="16" stroke="#6ee7b7" stroke-width="1.6" stroke-dasharray="5 3"/>
+              <line x1="129" y1="101" x2="225" y2="20" stroke="${accentGold}" stroke-width="1.4"/>
+              <text x="218" y="34" fill="#6ee7b7" font-family="monospace" font-size="8">LIGHT STILL RETURNS</text>
+              <rect x="195" y="96" width="36" height="30" rx="3" fill="#091022" stroke="${strokeSub}" stroke-width="1.8"/>
+              <line x1="175" y1="108" x2="195" y2="108" stroke="${strokeMain}" stroke-width="2"/>
+              <line x1="231" y1="108" x2="251" y2="108" stroke="${strokeMain}" stroke-width="2"/>
+              <line x1="213" y1="96" x2="213" y2="72" stroke="${strokeSub}" stroke-width="1.5"/>
+            </svg>`;
+
+        case 'opportunity-rover':
+          return `
+            <svg viewBox="0 0 320 150" class="w-full h-full max-h-36">
+              <path d="M20 132 L300 118" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <polygon points="75,84 235,76 245,86 68,94" fill="#140d12" stroke="${strokeMain}" stroke-width="2"/>
+              <line x1="196" y1="78" x2="194" y2="34" stroke="${strokeSub}" stroke-width="2.5"/>
+              <rect x="182" y="24" width="28" height="12" rx="2" fill="#140d12" stroke="${strokeMain}" stroke-width="1.8"/>
+              <circle cx="190" cy="30" r="2.5" fill="${accentGold}"/>
+              <circle cx="202" cy="30" r="2.5" fill="${accentGold}"/>
+              <polyline points="98,118 122,94 158,114" fill="none" stroke="${strokeSub}" stroke-width="2"/>
+              <polyline points="158,114 185,90 218,112" fill="none" stroke="${strokeSub}" stroke-width="2"/>
+              <circle cx="98" cy="118" r="11" fill="#070b19" stroke="${strokeMain}" stroke-width="2"/>
+              <circle cx="158" cy="114" r="11" fill="#070b19" stroke="${strokeMain}" stroke-width="2"/>
+              <circle cx="218" cy="112" r="11" fill="#070b19" stroke="${strokeMain}" stroke-width="2"/>
+              <polyline points="232,84 256,92 252,106" fill="none" stroke="${accentGold}" stroke-width="1.8"/>
+            </svg>`;
+
+        case 'ingenuity-helicopter':
+          return `
+            <svg viewBox="0 0 320 150" class="w-full h-full max-h-36">
+              <path d="M30 130 Q160 124 290 130" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <rect x="128" y="24" width="64" height="6" rx="2" fill="#140d12" stroke="${accentGold}" stroke-width="1.8"/>
+              <line x1="160" y1="30" x2="160" y2="76" stroke="${strokeSub}" stroke-width="2.5"/>
+              <line x1="65" y1="42" x2="255" y2="42" stroke="${strokeMain}" stroke-width="2.4"/>
+              <line x1="72" y1="54" x2="232" y2="54" stroke="${strokeMain}" stroke-width="2.4"/>
+              <path d="M235 54 L246 49 L252 57" fill="none" stroke="#fda4af" stroke-width="1.6"/>
+              <text x="212" y="68" fill="#fecdd3" font-family="monospace" font-size="7.5">72 FLIGHTS COMPLETED</text>
+              <rect x="142" y="76" width="36" height="26" rx="3" fill="#140d12" stroke="${strokeMain}" stroke-width="2"/>
+              <line x1="144" y1="100" x2="108" y2="128" stroke="${strokeSub}" stroke-width="2"/>
+              <line x1="176" y1="100" x2="212" y2="128" stroke="${strokeSub}" stroke-width="2"/>
+              <line x1="150" y1="102" x2="128" y2="128" stroke="${strokeSub}" stroke-width="1.4"/>
+              <line x1="170" y1="102" x2="192" y2="128" stroke="${strokeSub}" stroke-width="1.4"/>
+            </svg>`;
+
+        case 'viking-1-lander':
+          return `
+            <svg viewBox="0 0 320 150" class="w-full h-full max-h-36">
+              <line x1="20" y1="128" x2="300" y2="128" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <polygon points="105,74 215,74 228,96 92,96" fill="#140d12" stroke="${strokeMain}" stroke-width="2"/>
+              <rect x="112" y="62" width="28" height="12" rx="2" fill="#140d12" stroke="${accentGold}" stroke-width="1.6"/>
+              <rect x="180" y="62" width="28" height="12" rx="2" fill="#140d12" stroke="${accentGold}" stroke-width="1.6"/>
+              <line x1="160" y1="74" x2="160" y2="42" stroke="${strokeSub}" stroke-width="2"/>
+              <path d="M138 38 Q160 52 182 38" fill="none" stroke="${strokeMain}" stroke-width="2.2"/>
+              <rect x="128" y="46" width="10" height="16" fill="#140d12" stroke="${strokeSub}" stroke-width="1.5"/>
+              <rect x="182" y="46" width="10" height="16" fill="#140d12" stroke="${strokeSub}" stroke-width="1.5"/>
+              <line x1="105" y1="96" x2="82" y2="126" stroke="${strokeMain}" stroke-width="2.2"/>
+              <line x1="215" y1="96" x2="238" y2="126" stroke="${strokeMain}" stroke-width="2.2"/>
+              <line x1="160" y1="96" x2="160" y2="127" stroke="${strokeSub}" stroke-width="1.8"/>
+              <ellipse cx="82" cy="127" rx="12" ry="3.5" fill="none" stroke="${strokeMain}" stroke-width="1.8"/>
+              <ellipse cx="238" cy="127" rx="12" ry="3.5" fill="none" stroke="${strokeMain}" stroke-width="1.8"/>
+            </svg>`;
+
+        case 'insight-lander':
+          return `
+            <svg viewBox="0 0 320 150" class="w-full h-full max-h-36">
+              <line x1="15" y1="128" x2="305" y2="128" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <ellipse cx="76" cy="78" rx="44" ry="11" fill="#140d12" stroke="${strokeMain}" stroke-width="2"/>
+              <ellipse cx="244" cy="78" rx="44" ry="11" fill="#140d12" stroke="${strokeMain}" stroke-width="2"/>
+              <rect x="124" y="72" width="72" height="18" rx="3" fill="#140d12" stroke="${strokeMain}" stroke-width="2"/>
+              <line x1="132" y1="90" x2="116" y2="126" stroke="${strokeSub}" stroke-width="2"/>
+              <line x1="188" y1="90" x2="204" y2="126" stroke="${strokeSub}" stroke-width="2"/>
+              <path d="M225 127 A20 18 0 0 1 265 127 Z" fill="#140d12" stroke="${accentGold}" stroke-width="2"/>
+              <path d="M196 86 Q212 108 228 124" fill="none" stroke="${accentGold}" stroke-width="1.3" stroke-dasharray="3 2"/>
+              <text x="218" y="103" fill="${accentGold}" font-family="monospace" font-size="8">LISTENING DOME</text>
+            </svg>`;
+
+        case 'perseverance-edl':
+          return `
+            <svg viewBox="0 0 320 150" class="w-full h-full max-h-36">
+              <path d="M15 128 Q160 120 305 128" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <path d="M40 124 Q85 82 145 112 Q115 126 40 124 Z" fill="#140d12" stroke="${strokeMain}" stroke-width="2"/>
+              <path d="M62 118 Q88 94 125 113" fill="none" stroke="${accentGold}" stroke-width="1.2" stroke-dasharray="4 2"/>
+              <line x1="145" y1="112" x2="195" y2="115" stroke="${strokeSub}" stroke-width="1.2"/>
+              <line x1="138" y1="118" x2="195" y2="115" stroke="${strokeSub}" stroke-width="1.2"/>
+              <polygon points="195,115 225,84 268,108 250,124" fill="#140d12" stroke="${strokeMain}" stroke-width="2"/>
+              <text x="186" y="75" fill="${accentGold}" font-family="monospace" font-size="8">DARE MIGHTY THINGS</text>
+            </svg>`;
+      }
+    }
+
+    // =========================================================================
+    // 5. INTERACTIVE CELESTIAL MAP RENDERER
+    // =========================================================================
+    function renderRadarMap() {
+      const container = document.getElementById('radar-map-container');
+      const filtered = getFilteredArtifacts();
+      let svgContent = '';
+
+      if (currentFilter === 'ALL') {
+        document.getElementById('map-title').textContent = 'Two Worlds, Eight Quiet Pioneers';
+        document.getElementById('map-coords-badge').textContent = '8 PIONEERS';
+
+        svgContent = `
+          <svg viewBox="0 0 480 300" class="w-full h-full">
+            <defs>
+              <radialGradient id="moonGrad" cx="40%" cy="35%" r="60%">
+                <stop offset="0%" stop-color="#1e2b4a"/>
+                <stop offset="70%" stop-color="#0d152b"/>
+                <stop offset="100%" stop-color="#060916"/>
+              </radialGradient>
+              <radialGradient id="marsGrad" cx="40%" cy="35%" r="60%">
+                <stop offset="0%" stop-color="#4a1d14"/>
+                <stop offset="70%" stop-color="#210d09"/>
+                <stop offset="100%" stop-color="#0a0505"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Soft Starlight Horizon Bridge Connecting Earth's Reach -->
+            <path d="M122 150 Q240 105 358 150" fill="none" stroke="#f4c97a" stroke-opacity="0.16" stroke-width="1.2" stroke-dasharray="3 4"/>
+
+            <!-- LEFT GLOBE: THE MOON (LUNA) -->
+            <g>
+              <circle cx="122" cy="150" r="96" fill="url(#moonGrad)" stroke="#a7c4e5" stroke-opacity="0.4" stroke-width="1.5"/>
+              <ellipse cx="98" cy="135" rx="28" ry="34" fill="#a7c4e5" opacity="0.07"/>
+              <ellipse cx="145" cy="128" rx="22" ry="18" fill="#a7c4e5" opacity="0.08"/>
+              <text x="122" y="34" text-anchor="middle" fill="#a7c4e5" font-family="monospace" font-size="10" letter-spacing="2">LUNA // SILVER HAVEN</text>
+            </g>
+
+            <!-- RIGHT GLOBE: MARS -->
+            <g>
+              <circle cx="358" cy="150" r="96" fill="url(#marsGrad)" stroke="#e27d60" stroke-opacity="0.4" stroke-width="1.5"/>
+              <path d="M305 155 Q358 142 405 160" fill="none" stroke="#e27d60" stroke-opacity="0.2" stroke-width="6"/>
+              <ellipse cx="385" cy="125" rx="24" ry="16" fill="#e89b5a" opacity="0.09"/>
+              <text x="358" y="34" text-anchor="middle" fill="#e89b5a" font-family="monospace" font-size="10" letter-spacing="2">MARS // DAWN HORIZON</text>
+            </g>
+
+            <!-- Artifact Starlight Pins -->
+            ${ARTIFACTS.map(art => {
+              const isMoon = art.world === 'MOON';
+              const cx = isMoon ? (42 + (art.mapX / 100) * 160) : (278 + (art.mapX / 100) * 160);
+              const cy = 66 + (art.mapY / 100) * 168;
+              const color = isMoon ? '#a7c4e5' : '#e89b5a';
+              const isSelected = art.id === selectedArtifactId;
+
+              return `
+                <g class="cursor-pointer group" onclick="selectArtifact('${art.id}')">
+                  ${isSelected ? `<circle cx="${cx}" cy="${cy}" r="12" fill="none" stroke="#f4c97a" stroke-width="1.5" class="beacon-ring"/>` : ''}
+                  <circle cx="${cx}" cy="${cy}" r="${isSelected ? 6 : 4.5}" fill="${isSelected ? '#f4c97a' : color}" stroke="#070b19" stroke-width="1.5"/>
+                  ${isSelected ? `
+                    <rect x="${cx - 46}" y="${cy - 25}" width="92" height="16" rx="4" fill="#070b19" stroke="#f4c97a" stroke-width="1"/>
+                    <text x="${cx}" y="${cy - 14}" text-anchor="middle" fill="#fef3c7" font-family="monospace" font-size="8" font-weight="bold">${art.mission.split(' ')[0]}</text>
+                  ` : ''}
+                </g>
+              `;
+            }).join('')}
+          </svg>
+        `;
+      } else {
+        const isMoon = currentFilter === 'MOON';
+        const themeColor = isMoon ? '#a7c4e5' : '#e89b5a';
+        const bgTint = isMoon ? '#081024' : '#160b10';
+        document.getElementById('map-title').textContent = isMoon ? 'Quiet Sites Across the Silver Moon' : 'Quiet Sites Across the Martian Dawn';
+        document.getElementById('map-coords-badge').textContent = `${filtered.length} ${isMoon ? 'LUNAR' : 'MARTIAN'} PIONEERS`;
+
+        svgContent = `
+          <svg viewBox="0 0 480 300" class="w-full h-full" style="background:${bgTint}">
+            <g fill="none" stroke="${themeColor}" stroke-opacity="0.15" stroke-width="1.2">
+              <ellipse cx="240" cy="150" rx="210" ry="125"/>
+              <ellipse cx="240" cy="150" rx="155" ry="90"/>
+              <ellipse cx="240" cy="150" rx="95" ry="55"/>
+              <path d="M40 90 Q160 130 280 80 T440 110"/>
+              <path d="M30 210 Q180 185 310 225 T455 195"/>
+            </g>
+
+            <line x1="240" y1="150" x2="440" y2="60" stroke="#f4c97a" stroke-opacity="0.22" stroke-width="1.4" class="radar-sweep"/>
+
+            ${filtered.map(art => {
+              const cx = (art.mapX / 100) * 480;
+              const cy = (art.mapY / 100) * 300;
+              const isSelected = art.id === selectedArtifactId;
+              const shortLabel = art.name.split('(')[0].trim().slice(0, 18);
+
+              return `
+                <g class="cursor-pointer" onclick="selectArtifact('${art.id}')">
+                  <circle cx="${cx}" cy="${cy}" r="12" fill="none" stroke="${isSelected ? '#f4c97a' : themeColor}" stroke-width="1.4" class="${isSelected ? 'beacon-ring' : ''}" opacity="${isSelected ? 0.9 : 0.35}"/>
+                  <circle cx="${cx}" cy="${cy}" r="${isSelected ? 6.5 : 5}" fill="${isSelected ? '#f4c97a' : themeColor}" stroke="#070b19" stroke-width="1.8"/>
+                  <g transform="translate(${cx > 340 ? cx - 125 : cx + 10}, ${cy - 10})">
+                    <rect x="0" y="0" width="115" height="20" rx="4" fill="#070b19" fill-opacity="0.92" stroke="${isSelected ? '#f4c97a' : '#334155'}" stroke-width="1"/>
+                    <text x="6" y="13" fill="${isSelected ? '#fef3c7' : '#e2e8f0'}" font-family="monospace" font-size="8.5" font-weight="${isSelected ? 'bold' : 'normal'}">${shortLabel}</text>
+                  </g>
+                </g>
+              `;
+            }).join('')}
+          </svg>
+        `;
+      }
+
+      container.innerHTML = svgContent;
+    }
+
+    // =========================================================================
+    // 6. RENDER PIONEER ROSTER, DOSSIER & SKYWARD TRIBUTE WALL
+    // =========================================================================
+    function getFilteredArtifacts() {
+      if (currentFilter === 'ALL') return ARTIFACTS;
+      return ARTIFACTS.filter(a => a.world === currentFilter);
+    }
+
+    function renderArtifactRoster() {
+      const listEl = document.getElementById('artifact-list');
+      const filtered = getFilteredArtifacts();
+      document.getElementById('roster-count').textContent = `${filtered.length} of ${ARTIFACTS.length}`;
+
+      listEl.innerHTML = filtered.map(art => {
+        const isSelected = art.id === selectedArtifactId;
+        const isMoon = art.world === 'MOON';
+        const activeBorder = isSelected
+          ? 'border-amber-300/75 bg-amber-300/[0.11] shadow-md'
+          : 'border-amber-200/10 bg-[#090f24]/60 hover:bg-[#0f1736] hover:border-amber-200/25';
+
+        return `
+          <button onclick="selectArtifact('${art.id}')" class="w-full text-left p-3 rounded-xl border transition-all flex items-center justify-between gap-3 ${activeBorder}">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full ${isMoon ? 'bg-[#a7c4e5]' : 'bg-[#e27d60]'} shrink-0"></span>
+                <span class="font-mono text-[10px] uppercase tracking-wider ${isMoon ? 'text-sky-200' : 'text-orange-200'} truncate">
+                  ${art.world} • ${art.mission}
+                </span>
+              </div>
+              <h3 class="font-serif font-bold text-base text-amber-50 truncate mt-0.5">${art.name}</h3>
+              <p class="font-mono text-[11px] text-slate-400 truncate">${art.location}</p>
+            </div>
+            <span class="font-mono text-[10px] px-2 py-1 rounded-md bg-[#070b19]/80 border border-amber-200/15 text-amber-200/80 shrink-0">
+              ${art.deployedDate.split(',')[1]?.trim() || 'ARCHIVE'}
+            </span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function renderSelectedDossier(animateText = false) {
+      const art = ARTIFACTS.find(a => a.id === selectedArtifactId) || ARTIFACTS[0];
+      const isMoon = art.world === 'MOON';
+      const panel = document.getElementById('dossier-panel');
+
+      panel.classList.remove('glow-lunar', 'glow-mars');
+      panel.classList.add(isMoon ? 'glow-lunar' : 'glow-mars');
+
+      const worldBadge = document.getElementById('dossier-world-badge');
+      worldBadge.textContent = `${isMoon ? 'THE MOON' : 'MARS'} • ${art.mission}`;
+      worldBadge.className = isMoon
+        ? 'font-mono text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sky-300/15 text-sky-200 border border-sky-300/30'
+        : 'font-mono text-xs font-semibold px-2.5 py-0.5 rounded-full bg-orange-300/15 text-orange-200 border border-orange-300/30';
+
+      document.getElementById('dossier-status-badge').textContent = art.status;
+      document.getElementById('dossier-title').textContent = art.name;
+      document.getElementById('dossier-subtitle').textContent = `${art.location} • ${art.coords} • Arrived ${art.deployedDate}`;
+
+      const schematicBox = document.getElementById('schematic-box');
+      schematicBox.className = `md:col-span-6 relative rounded-xl ${isMoon ? 'blueprint-bg' : 'blueprint-bg-mars'} border border-amber-200/15 p-4 flex flex-col items-center justify-center min-h-[225px] overflow-hidden`;
+      document.getElementById('schematic-code').textContent = art.figCode;
+      document.getElementById('schematic-dim').textContent = art.dimensions;
+      document.getElementById('schematic-svg-wrapper').innerHTML = getArtifactSchematicSVG(art.id, art.world);
+
+      document.getElementById('spec-mass').textContent = art.mass;
+      document.getElementById('spec-lifespan').textContent = art.lifespan;
+      document.getElementById('spec-distance').textContent = art.distance;
+      document.getElementById('spec-contact').textContent = art.lastContact;
+      document.getElementById('transmission-freq').textContent = art.freq;
+      document.getElementById('human-touch-text').textContent = art.humanTouch;
+
+      const slider = document.getElementById('aging-slider');
+      slider.className = isMoon ? 'w-full' : 'w-full mars-slider';
+      updateWeatheringSimulation(agingValue);
+
+      const transEl = document.getElementById('transmission-text');
+      if (typewriterTimer) clearInterval(typewriterTimer);
+      if (animateText) {
+        transEl.textContent = '';
+        let idx = 0;
+        const fullText = art.lastTransmission;
+        typewriterTimer = setInterval(() => {
+          transEl.textContent = fullText.slice(0, idx) + '▌';
+          idx++;
+          if (idx > fullText.length) {
+            clearInterval(typewriterTimer);
+            transEl.textContent = fullText;
+          }
+        }, 16);
+      } else {
+        transEl.textContent = art.lastTransmission;
+      }
+
+      updateStoryTabContent(art);
+
+      const globalIdx = ARTIFACTS.findIndex(a => a.id === art.id) + 1;
+      document.getElementById('artifact-index-indicator').textContent = `PIONEER 0${globalIdx} / 0${ARTIFACTS.length}`;
+    }
+
+    function updateWeatheringSimulation(val) {
+      agingValue = Number(val);
+      const art = ARTIFACTS.find(a => a.id === selectedArtifactId) || ARTIFACTS[0];
+      const isMoon = art.world === 'MOON';
+
+      const yearBadge = document.getElementById('weathering-year-badge');
+      const yearLabel = document.getElementById('aging-year-label');
+      const condReadout = document.getElementById('condition-readout');
+      const descEl = document.getElementById('aging-description');
+      const tintEl = document.getElementById('weathering-tint');
+      const svgWrap = document.getElementById('schematic-svg-wrapper');
+
+      if (agingValue < 25) {
+        yearBadge.textContent = 'EPOCH: TOUCHDOWN';
+        yearLabel.textContent = 'ARRIVAL DAY';
+        condReadout.textContent = 'STATE: GLEAMING NEW';
+        descEl.textContent = art.agingStages.early;
+        tintEl.style.opacity = '0';
+        svgWrap.style.filter = 'none';
+      } else if (agingValue < 70) {
+        yearBadge.textContent = 'EPOCH: 2026 (TONIGHT)';
+        yearLabel.textContent = 'PRESENT DAY';
+        condReadout.textContent = isMoon ? 'STARLIGHT FADED' : 'DUST KISSED';
+        descEl.textContent = art.agingStages.mid;
+        tintEl.style.opacity = isMoon ? '0.14' : '0.42';
+        svgWrap.style.filter = isMoon ? 'sepia(0.16) brightness(0.96)' : 'sepia(0.38) brightness(0.9)';
+      } else {
+        yearBadge.textContent = 'EPOCH: 2126+';
+        yearLabel.textContent = '+100 YEARS';
+        condReadout.textContent = isMoon ? 'ETERNAL MONUMENT' : 'CRADLED IN RED SAND';
+        descEl.textContent = art.agingStages.late;
+        tintEl.style.opacity = isMoon ? '0.28' : '0.7';
+        svgWrap.style.filter = isMoon ? 'sepia(0.3) contrast(0.92) brightness(0.88)' : 'sepia(0.68) contrast(0.88) brightness(0.78)';
+      }
+    }
+
+    function switchStoryTab(tab) {
+      currentStoryTab = tab;
+      const art = ARTIFACTS.find(a => a.id === selectedArtifactId) || ARTIFACTS[0];
+      updateStoryTabContent(art);
+    }
+
+    function updateStoryTabContent(art) {
+      ['mission', 'farewell', 'legacy'].forEach(t => {
+        const btn = document.getElementById(`tab-${t}`);
+        if (t === currentStoryTab) {
+          btn.className = 'pb-2.5 font-mono text-xs uppercase tracking-wider border-b-2 border-amber-300 text-amber-50 font-semibold whitespace-nowrap transition-all';
+        } else {
+          btn.className = 'pb-2.5 font-mono text-xs uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-amber-100 whitespace-nowrap transition-all';
+        }
+      });
+
+      const contentEl = document.getElementById('story-content');
+      if (currentStoryTab === 'mission') contentEl.textContent = art.missionStory;
+      if (currentStoryTab === 'farewell') contentEl.textContent = art.farewellStory;
+      if (currentStoryTab === 'legacy') contentEl.textContent = art.legacyStory;
+    }
+
+    function renderSkywardTributes() {
+      const grid = document.getElementById('tribute-cards-grid');
+      grid.innerHTML = SKYWARD_TRIBUTES.map(item => `
+        <div class="rounded-xl bg-[#090f24]/85 border border-amber-200/15 p-3.5 flex flex-col justify-between gap-2">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <span class="font-mono text-[10px] text-amber-300/90 truncate">TO: ${item.target}</span>
+              <span class="text-amber-300 text-xs">✦</span>
+            </div>
+            <p class="font-serif italic text-[15px] text-amber-50/95 leading-snug">
+              “${item.message}”
+            </p>
+          </div>
+          <div class="pt-2 border-t border-amber-200/10 flex items-center justify-between font-mono text-[10px] text-slate-400">
+            <span class="text-amber-100/80">${item.author || 'A Stargazer'}</span>
+            <span>${item.city || 'Planet Earth'}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function submitSkywardTribute(event) {
+      event.preventDefault();
+      const target = document.getElementById('tribute-target').value;
+      const author = document.getElementById('tribute-author').value.trim() || 'A Stargazer';
+      const city = document.getElementById('tribute-city').value.trim() || 'Looking Up From Earth';
+      const messageEl = document.getElementById('tribute-message');
+      const message = messageEl.value.trim();
+      if (!message) return;
+
+      SKYWARD_TRIBUTES.unshift({ author, city, target, message });
+      if (SKYWARD_TRIBUTES.length > 8) SKYWARD_TRIBUTES.pop();
+
+      totalTributeCount++;
+      document.getElementById('global-tribute-count').textContent = totalTributeCount.toLocaleString();
+      messageEl.value = '';
+      renderSkywardTributes();
+      releaseSkywardLantern(author);
+      playWarmChime();
+    }
+
+    function releaseSkywardLantern(author) {
+      const stage = document.getElementById('lantern-sky-stage');
+      const lantern = document.createElement('div');
+      const leftPct = 15 + Math.random() * 70;
+      lantern.className = 'skyward-lantern absolute bottom-6 flex flex-col items-center';
+      lantern.style.left = `${leftPct}%`;
+      lantern.innerHTML = `
+        <div class="w-4 h-4 rounded-full bg-amber-200 shadow-[0_0_22px_6px_rgba(244,201,122,0.85)]"></div>
+        <span class="mt-1.5 px-2 py-0.5 rounded-full bg-[#070b19]/85 border border-amber-300/40 font-mono text-[9px] text-amber-100 whitespace-nowrap">
+          ✦ ${author}
+        </span>
+      `;
+      stage.appendChild(lantern);
+      setTimeout(() => lantern.remove(), 5600);
+    }
+
+    // =========================================================================
+    // 7. INTERACTION & NAVIGATION HANDLERS
+    // =========================================================================
+    function setPlanetFilter(filter) {
+      currentFilter = filter;
+
+      // Update Body Atmospheric Horizon Glow
+      document.body.classList.remove('theme-lunar', 'theme-mars');
+      if (filter === 'MOON') document.body.classList.add('theme-lunar');
+      if (filter === 'MARS') document.body.classList.add('theme-mars');
+
+      const btnAll = document.getElementById('filter-all');
+      const btnMoon = document.getElementById('filter-moon');
+      const btnMars = document.getElementById('filter-mars');
+
+      btnAll.className = filter === 'ALL'
+        ? 'px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all bg-amber-200/15 text-amber-100 border border-amber-200/25 shadow'
+        : 'px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all text-slate-300 hover:text-amber-100';
+
+      btnMoon.className = filter === 'MOON'
+        ? 'px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all bg-sky-300/20 text-sky-200 border border-sky-300/40 shadow flex items-center gap-1.5'
+        : 'px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all text-slate-300 hover:text-sky-200 flex items-center gap-1.5';
+
+      btnMars.className = filter === 'MARS'
+        ? 'px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all bg-orange-300/20 text-orange-200 border border-orange-300/40 shadow flex items-center gap-1.5'
+        : 'px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all text-slate-300 hover:text-orange-200 flex items-center gap-1.5';
+
+      const filtered = getFilteredArtifacts();
+      if (!filtered.some(a => a.id === selectedArtifactId)) {
+        selectedArtifactId = filtered[0].id;
+      }
+
+      renderRadarMap();
+      renderArtifactRoster();
+      renderSelectedDossier(false);
+    }
+
+    function selectArtifact(id) {
+      selectedArtifactId = id;
+      renderRadarMap();
+      renderArtifactRoster();
+      renderSelectedDossier(true);
+      playBeaconPing();
+    }
+
+    function selectAdjacentArtifact(delta) {
+      const filtered = getFilteredArtifacts();
+      const idx = filtered.findIndex(a => a.id === selectedArtifactId);
+      const nextIdx = (idx + delta + filtered.length) % filtered.length;
+      selectArtifact(filtered[nextIdx].id);
+    }
+
+    function triggerLastTransmission() {
+      renderSelectedDossier(true);
+      if (!isAudioEnabled) {
+        toggleSpaceAudio();
+      } else {
+        playBeaconPing();
+      }
+    }
+
+    function openHeritageModal() {
+      const modal = document.getElementById('heritage-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeHeritageModal() {
+      const modal = document.getElementById('heritage-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // =========================================================================
+    // 8. WEB AUDIO API: WARM CELESTIAL CHOIR & HEARTBEAT BEACON SYNTHESIZER
+    // =========================================================================
+    function toggleSpaceAudio() {
+      const indicator = document.getElementById('audio-indicator');
+      const label = document.getElementById('audio-label');
+
+      if (!isAudioEnabled) {
+        try {
+          if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          }
+          if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+          }
+
+          // Warm Major-Ninth Celestial Choir Chord (F2, C3, G3, A3, E4)
+          const freqs = [87.31, 130.81, 196.00, 220.00, 329.63];
+          choirMasterGain = audioCtx.createGain();
+          choirMasterGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+          choirMasterGain.gain.linearRampToValueAtTime(0.045, audioCtx.currentTime + 2.2);
+          choirMasterGain.connect(audioCtx.destination);
+
+          choirOscillators = freqs.map((f, i) => {
+            const osc = audioCtx.createOscillator();
+            const voiceGain = audioCtx.createGain();
+            osc.type = i % 2 === 0 ? 'sine' : 'triangle';
+            osc.frequency.setValueAtTime(f, audioCtx.currentTime);
+            // Gentle slow detune warmth
+            osc.detune.setValueAtTime((i - 2) * 3.5, audioCtx.currentTime);
+            voiceGain.gain.setValueAtTime(i === 0 ? 0.45 : 0.22, audioCtx.currentTime);
+            osc.connect(voiceGain);
+            voiceGain.connect(choirMasterGain);
+            osc.start();
+            return osc;
+          });
+
+          isAudioEnabled = true;
+          indicator.className = 'w-2 h-2 rounded-full bg-amber-300 animate-ping';
+          label.textContent = 'SKY CHOIR: ON';
+          playBeaconPing();
+
+          beaconInterval = setInterval(() => {
+            if (isAudioEnabled) playBeaconPing(0.03);
+          }, 5200);
+        } catch (e) {
+          console.warn('Web Audio API unavailable:', e);
+        }
+      } else {
+        isAudioEnabled = false;
+        choirOscillators.forEach(osc => { try { osc.stop(); } catch(e){} });
+        choirOscillators = [];
+        if (beaconInterval) clearInterval(beaconInterval);
+        indicator.className = 'w-2 h-2 rounded-full bg-slate-500';
+        label.textContent = 'SKY CHOIR: OFF';
+      }
+    }
+
+    function playBeaconPing(volume = 0.05) {
+      if (!isAudioEnabled || !audioCtx) return;
+      const art = ARTIFACTS.find(a => a.id === selectedArtifactId) || ARTIFACTS[0];
+      const now = audioCtx.currentTime;
+
+      // Soft double-pulse heartbeat chime
+      [0, 0.24].forEach((offset, idx) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(idx === 0 ? art.beaconHz : art.beaconHz * 1.25, now + offset);
+
+        gain.gain.setValueAtTime(0.0001, now + offset);
+        gain.gain.linearRampToValueAtTime(idx === 0 ? volume : volume * 0.65, now + offset + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + offset + 0.75);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + offset);
+        osc.stop(now + offset + 0.8);
+      });
+    }
+
+    function playWarmChime() {
+      if (!audioCtx) {
+        try {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        } catch (e) { return; }
+      }
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+      [523.25, 659.25, 783.99, 1046.5].forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + i * 0.11);
+        gain.gain.setValueAtTime(0.0001, now + i * 0.11);
+        gain.gain.linearRampToValueAtTime(0.04, now + i * 0.11 + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.11 + 1.1);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + i * 0.11);
+        osc.stop(now + i * 0.11 + 1.15);
+      });
+    }
+
+    // =========================================================================
+    // 9. TWINKLING NIGHT SKY CANVAS (HUMANITY FACING THE SKY)
+    // =========================================================================
+    function initStarfield() {
+      const canvas = document.getElementById('starfield-canvas');
+      const ctx = canvas.getContext('2d');
+      let stars = [];
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const count = Math.min(140, Math.floor((canvas.width * canvas.height) / 11000));
+        stars = Array.from({ length: count }, () => ({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: 0.6 + Math.random() * 1.5,
+          phase: Math.random() * Math.PI * 2,
+          speed: 0.008 + Math.random() * 0.018,
+          warm: Math.random() > 0.35
+        }));
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (const s of stars) {
+          s.phase += s.speed;
+          const alpha = 0.25 + 0.65 * (0.5 + 0.5 * Math.sin(s.phase));
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = s.warm
+            ? `rgba(244, 201, 122, ${alpha})`
+            : `rgba(167, 196, 229, ${alpha})`;
+          ctx.fill();
+        }
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+      draw();
+    }
+
+    // =========================================================================
+    // 10. INITIALIZE APPLICATION ON LOAD
+    // =========================================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      initStarfield();
+      renderRadarMap();
+      renderArtifactRoster();
+      renderSelectedDossier(false);
+      renderSkywardTributes();
+    });
+  </script>
+</body>
+</html>
